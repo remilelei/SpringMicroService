@@ -22,13 +22,20 @@
 1. 有时业务十分简单，单体应用程序更加简单合适，没必要引入微服务架构。 微服务架构相比单体应用程序更加复杂，需要投入更多的运维成本，权衡一下值不值得。
 2. 微服务因为他的分布式特性导致他在做事务性任务时需要更大的代价。
 
-## 3 开发人员的故事：用Spring Boot和Java构建微服务（代码运行采坑）
+## 3 开发人员的故事：用Spring Boot和Java构建微服务
+### 3.1 采坑
 1. 跑不起来，出现下面的报错：
 ```
 licensingservice_1  | /bin/sh: ./run.sh: not found
 common_licensingservice_1 exited with code 127
 ```
 决定先继续搞下去，理清逻辑后定位问题
+
+### 3.2 总结
+ 一个Spring Boot微服务基于一个引导类与一个控制器类。
+ 1. 引导类负责启动与初始化应用程序。使用SpringBootApplication注解。
+ 2. 控制器类负责公开服务的HTTP端点。 使用RestController注解。 另外RequestMapping注解来声明对外端口。
+
 
 ## 4 DevOps工程师的故事：构建运行时的严谨性
 
