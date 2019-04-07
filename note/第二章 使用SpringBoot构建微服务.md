@@ -29,7 +29,8 @@
 licensingservice_1  | /bin/sh: ./run.sh: not found
 common_licensingservice_1 exited with code 127
 ```
-决定先继续搞下去，理清逻辑后定位问题
+mac上没有这个问题，windows就会报错。把`CMD ./run.sh`改成了`CMD sh run.sh`就可以了。
+2. docker执行run.sh之后，报错：Unable to access jarfile /usr/local/licensingservice/licensing-service-0.0.1-SNAPSHOT.jar
 
 ### 3.2 总结
  一个Spring Boot微服务基于一个引导类与一个控制器类。
